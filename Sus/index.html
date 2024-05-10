@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sus</title>
+<style>
+body{
+    height: 800px;
+    display: flex;
+    text-align: center;  
+    flex-direction: column;
+    justify-content: center;
+    background-color: #272727;
+}
+button {
+    padding: 20px 35px;
+    border: unset;
+    border-radius: 15px;
+    color: #ff5cb5;
+    z-index: 1;
+    position: relative;
+    font-weight: 1000;
+    font-size: 30px;
+    transition: all 250ms;
+    overflow: hidden;
+}
+    
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ff5cb5;
+    z-index: -1;
+    transition: all 250ms
+}
+    
+button:hover {
+        color: #e8e8e8;
+}
+    
+button:hover::before {
+        width: 100%;
+}
+
+.hand-img {
+    display: none;
+    margin-top: 20px;
+    width: 40%; 
+    transform: rotate(180deg); 
+}
+</style>
+</head>
+<body>
+</head>
+<body>
+        <div class="content">
+            <button id="clickbtn">Click Me</button>
+            <img src="img/hand.png" class="hand-img" id="handImg" alt="Noot Noot">
+        </div>
+        <script>
+            document.getElementById("clickbtn").addEventListener("click", function() {
+            document.getElementById("handImg").style.display = "inline-block";
+            document.getElementById("clickbtn").style.display = "none";
+            });
+        </script>
+</body>
+</html>
